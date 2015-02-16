@@ -67,7 +67,7 @@ html{
 body{
 	color: white;
 	font-family: helvetica, verdana, sans-serif;
-	line-height: 1.2em;
+	line-height: 1.4em;
 	background: #ccc4b9 url("img/background.jpg") no-repeat fixed;
 }
 
@@ -85,11 +85,12 @@ h1, h2, h3, nav{
 
 h1{
 	font-size: 2em;
-	padding: 1.35em 1.75em;
+	line-height: 2em;
 }
 
-h2, h3, nav{
+h2, h3{
 	font-size: 1em;
+	margin-bottom: 1em;
 }
 
 a{
@@ -105,7 +106,7 @@ p{
 }
 
 .block{
-	padding: 4% 5%;
+	padding: 2.5% 4.5%;
 }
 
 .main-block{
@@ -119,6 +120,10 @@ p{
 	justify-content: space-between;
 
 	background-color: #e8e7e8;
+}
+
+.no-margin{
+	margin: 0;
 }
 
 /*
@@ -145,7 +150,7 @@ p{
 */
 
 section{
-	margin-top: 1.5em;
+	margin: 1.7em 0;
 }
 
 /*
