@@ -38,9 +38,24 @@
 						<h2>Catégorie Programmation</h2>
 						<h2>Date 16/02.15</h2>
 					</header>
-					<p></p>
 					<!-- Contenue -->
-					
+					<p>Le but de ce tutoriel est de comprendre et utiliser git, un système de versionage très pratique. Git permet à plusieurs développeurs de travailler sur le même code en même temps, de garder un historique des modifications et de centraliser le projet sur un serveur distant, doublant ainsi comme un backup. Il est totalement possible d'utiliser git pour versionner un projet seulement en local, mais il est généralement utilisé avec un service tel que Github ou Bitbucket. Pour la suite de ce tutoriel, lorsque je mentionne le serveur ou dépôt, je me réfère à ce service.</p>
+
+					<p>Il y a 4 étapes à suivre lorsque l'on se sert de git. La première étape est de faire un pull, ou récupérer les modifications effectué par les autres développeurs sur le serveur. Pour faire un pull, on a besoin de fournir l'url du dépôt git, le nom d'utilisateur du service ainsi que le mot de passe qui lui ai associé.</p>
+					<code class="codeblock" lang="Console" legende="Exemple d'un pull">git pull origin master</code>
+
+					<p>La deuxième étape est de d'écrire le code, le tester, etc. comme on fait lorsqu'on développe normalement.</p>
+
+					<p>La troisième étape est de faire un <em>commit</em>. Un <em>commit</em> est fait dans une étape du développement où un morceau important est terminé et que le code est stable, c'est à dire raisonnablement sans bug. Il est très important de ne pas faire de <em>commit</em> sur un code instable. Un <em>commit</em> est accompagné d'un message qui décris les modifications effectué au code.</p>
+					<code class="codeblock" lang="Console" legende="Exemple d'un commit">git add .
+git commit -m "Message du commit"</code>
+
+
+					<p>La dernière étape est de faire un <em>push</em>. Un <em>push</em> est lorsqu'on envoie tous ses <em>commits</em> au serveur. Il n'est pas nécessaire de faire un <em>push</em> après chaque <em>commit</em>.</p>
+					<code class="codeblock" lang="Console" legende="Exemple d'un push">git push origin master</code>
+
+
+
 				</div>
 				<footer class="grey-block block">
 					<div id="copyright">

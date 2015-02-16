@@ -265,7 +265,7 @@ code.codeblock::before{
 
 	font-family: essence_sansregular, helvetica, verdana, sans-serif;
 	text-transform: uppercase;
-	font-size: 1em;
+	font-size: 0.9em;
 	letter-spacing: 0.2em;
 	content: "Code: " attr(lang) " / " attr(legende);
 }
