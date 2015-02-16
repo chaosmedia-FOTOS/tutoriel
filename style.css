@@ -58,3 +58,21 @@ html{
 *, *:before, *:after {
 	box-sizing: inherit;
 }
+
+body{
+	color: white;
+	background: #ccc4b9 url("img/background.jpg") no-repeat fixed;
+}
+
+a{
+
+}
+
+.main-block{
+	color: #474747;
+	background-color: white;
+}
+
+.grey-block{
+	background-color: #e8e7e8;
+}
