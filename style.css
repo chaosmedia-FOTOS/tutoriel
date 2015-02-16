@@ -103,7 +103,26 @@ p, .video-container{
 }
 
 .fa{
-	font-size: 42px;
+	font-size: 36px;
+}
+
+.fa-linkedin, .fa-facebook{
+	width: 36px;
+	height: 36px;
+
+	color: #e6e5e7;
+	background-color: #404040;
+}
+
+.fa-linkedin{
+	padding-top: 5px;
+	padding-left: 7px;
+	font-size: 28px;
+}
+
+.fa-facebook{
+	padding-top: 5px;
+	padding-left: 11px;
 }
 
 .block{
@@ -117,7 +136,7 @@ p, .video-container{
 
 .grey-block{
 	display: flex;
-	align-items: center;
+	align-items: flex-end;
 	justify-content: space-between;
 
 	background-color: #e8e7e8;
@@ -183,7 +202,7 @@ section{
 }
 
 .play-button-container .fa-play{
-	font-size: 200px;
+	font-size: 150px;
 	color: #1f1f1f;
 }
 
