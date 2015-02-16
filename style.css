@@ -53,6 +53,7 @@ table {
 */
 html{
 	box-sizing: border-box;
+	font-size: 150%;
 }
 
 *, *:before, *:after {
@@ -61,11 +62,41 @@ html{
 
 body{
 	color: white;
+	font-family: helvetica, verdana, sans-serif;
+	font-weight: lighter;
 	background: #ccc4b9 url("img/background.jpg") no-repeat fixed;
 }
 
-a{
+#wrapper{
+	max-width: 1200px;
+	margin: auto;
+}
 
+h1, h2, h3, nav{
+	font-family: essence_sanslight, helvetica, verdana, sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 0.4em;
+}
+
+h1{
+	font-size: 1.5em;
+}
+
+h2, nav{
+	font-size: 0.75em;
+}
+
+a{
+	color: inherit;
+	text-decoration: inherit;
+}
+
+p{
+	font-size: 0.7em;
+}
+
+.fa{
+	font-size: 42px;
 }
 
 .main-block{
@@ -75,4 +106,10 @@ a{
 
 .grey-block{
 	background-color: #e8e7e8;
+}
+
+#btnRetour{
+	font-size: 70%;
+	text-transform: uppercase;
+	font-family: helvetica, verdana, sans-serif;
 }
