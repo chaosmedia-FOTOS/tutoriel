@@ -68,7 +68,7 @@ body{
 	color: white;
 	font-family: helvetica, verdana, sans-serif;
 	line-height: 1.4em;
-	background: #ccc4b9 url("img/design/background.jpg") no-repeat fixed;
+	background: #c6c6c6 url("img/design/background.jpg") no-repeat fixed;
 }
 
 #wrapper{
@@ -194,6 +194,14 @@ nav a{
 /*
 *	Contenue
 */
+
+#content a{
+	color: #c6c6c6;
+}
+
+#content a:hover{
+	color: #3c3c3c;
+}
 
 /*Vidéo*/
 .video-container{
