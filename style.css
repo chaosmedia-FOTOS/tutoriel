@@ -68,13 +68,19 @@ body{
 	color: white;
 	font-family: helvetica, verdana, sans-serif;
 	line-height: 1.4em;
-	background: #ccc4b9 url("img/background.jpg") no-repeat fixed;
+	background: #ccc4b9 url("img/design/background.jpg") no-repeat fixed;
 }
 
 #wrapper{
 	position: relative;
 	max-width: 1200px;
+	box-sizing: content-box;
 	margin: auto;
+	padding: 1.7em;
+}
+
+#wrapper>*{
+	box-sizing: border-box;
 }
 
 h1, h2, h3, nav{
@@ -96,6 +102,14 @@ h2, h3{
 a{
 	color: inherit;
 	text-decoration: inherit;
+}
+
+em{
+	font-style: italic;
+}
+
+strong{
+	font-weight: bold;
 }
 
 p, .video-container{
@@ -156,6 +170,7 @@ nav a{
 */
 
 #main-header{
+	position: relative;
 	height: 360px;
 	display: flex;
 	align-items: center;
@@ -171,7 +186,7 @@ nav a{
 	text-transform: uppercase;
 	font-family: helvetica, verdana, sans-serif;
 	position: absolute;
-	top: 1.5em;
+	top: 0;
 	left: 0;
 }
 
@@ -179,10 +194,7 @@ nav a{
 *	Contenue
 */
 
-section{
-	margin: 1.7em 0;
-}
-
+/*Vidéo*/
 .video-container{
 	position: relative;
 	width: 100%;
@@ -245,6 +257,13 @@ code.codeblock::before{
 	font-size: 1em;
 	letter-spacing: 0.2em;
 	content: "Code: " attr(lang) " / " attr(legende);
+}
+
+/*Images*/
+#content img{
+	display: block;
+	max-width: 100%;
+	margin: 1.5em auto;
 }
 
 /*
