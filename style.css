@@ -136,7 +136,7 @@ p, .video-container{
 
 .grey-block{
 	display: flex;
-	align-items: flex-end;
+	align-items: center;
 	justify-content: space-between;
 
 	background-color: #e8e7e8;
@@ -212,10 +212,46 @@ video{
 	height: 100%;
 }
 
+/*Bloc de code inline*/
+code{
+	background-color: #e8e7e8;
+	font-family: monospace;
+	padding: 0.3em;
+
+}
+
+/*Bloc de code*/
+code.codeblock{
+	display: block;
+	position: relative;
+	border: 1px dashed #404040;
+	padding: 2em;
+	margin-top: 3.4em;
+
+	white-space: pre-wrap;
+	overflow: visible;
+}
+
+code.codeblock::before{
+	display: block;
+	position: absolute;
+	
+	height: 1.5em;
+	top: -1.9em;
+	left: 0;
+
+	font-size: 1.1em;
+	content: "Code: " attr(lang) " / " attr(legende);
+}
+
 /*
 *	Footer
 */
 
 #copyright{
 	width: 75%;
+}
+
+footer .grey-block{
+	align-items: flex-end;
 }
