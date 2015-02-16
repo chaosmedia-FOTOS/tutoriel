@@ -51,23 +51,28 @@ table {
 /*
 * Box-Sizing
 */
+
 html{
 	box-sizing: border-box;
-	font-size: 150%;
 }
 
 *, *:before, *:after {
 	box-sizing: inherit;
 }
 
+/*
+* Style Généraux
+*/
+
 body{
 	color: white;
 	font-family: helvetica, verdana, sans-serif;
-	font-weight: lighter;
+	line-height: 1.2em;
 	background: #ccc4b9 url("img/background.jpg") no-repeat fixed;
 }
 
 #wrapper{
+	position: relative;
 	max-width: 1200px;
 	margin: auto;
 }
@@ -79,11 +84,12 @@ h1, h2, h3, nav{
 }
 
 h1{
-	font-size: 1.5em;
+	font-size: 2em;
+	padding: 1.35em 1.75em;
 }
 
-h2, nav{
-	font-size: 0.75em;
+h2, h3, nav{
+	font-size: 1em;
 }
 
 a{
@@ -92,11 +98,14 @@ a{
 }
 
 p{
-	font-size: 0.7em;
 }
 
 .fa{
 	font-size: 42px;
+}
+
+.block{
+	padding: 4% 5%;
 }
 
 .main-block{
@@ -105,11 +114,44 @@ p{
 }
 
 .grey-block{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
 	background-color: #e8e7e8;
 }
 
+/*
+*	Header
+*/
+
+#main-header{
+	height: 360px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 #btnRetour{
-	font-size: 70%;
 	text-transform: uppercase;
 	font-family: helvetica, verdana, sans-serif;
+	position: absolute;
+	top: 1.5em;
+	left: 0;
+}
+
+/*
+*	Contenue
+*/
+
+section{
+	margin-top: 1.5em;
+}
+
+/*
+*	Footer
+*/
+
+#copyright{
+	width: 75%;
 }
