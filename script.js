@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$(window).scroll(miniParallaxe).resize(miniParallaxe);
+	$(window).scroll(miniParallaxe).resize(miniParallaxe).load(miniParallaxe);
 })
 
 function miniParallaxe(){
