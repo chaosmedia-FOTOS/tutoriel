@@ -8,6 +8,8 @@ function miniParallaxe(){
 	$("body").css("background-position", "0 " + percent + "%");
 }
 
+////
+
 function startVideo(){
 	$(this).hide().parent(".video-container").find("video").attr("controls", "").get(0).play();
 }
