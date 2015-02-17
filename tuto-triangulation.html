@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FOTOS - Tutoriaux - Accueil</title>
+		<meta charset="utf-8">
+		<!-- Font-Awesome -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<!-- Font -->
+		<link rel="stylesheet" type="text/css" href="font/essence_light.css">
+		<link rel="stylesheet" type="text/css" href="font/essence_sans.css">
+		<!-- Style -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!-- Script -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+		<script src="script.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header>
+				<div id="main-header">
+					<a href="index.html" id="btnRetour">Retour</a>
+					<img src="img/design/logo-fotos.png" alt="Logo fotos">
+				</div>
+				<div class="main-block">
+					<h1 class="block">Tutoriel / Calcul et animation - Triangulation de Delaunay</h1>
+					<div class="grey-block block">
+						<h2 class="no-margin">Par Giacomo Ferron</h2>
+						<nav id="contact">
+							<a href="http://gfldesign.ca">Portfolio</a>
+							<a href="https://ca.linkedin.com/pub/giacomo-l-ferron/81/bbb/9a4"><span class="fa fa-linkedin"></span></a>
+						</nav>
+					</div>
+				</div>
+			</header>
+			<section class="main-block">
+				<div id="content" class="block">
+					<header>
+						<h2>Catégorie Programmation / Aniamtion</h2>
+						<h2>Date 17/02.15</h2>
+					</header>
+
+					<!-- Contenu -->
+					<br>
+					<img src="img/triangulationDElaunay.png" alt="triangulationDElaunay">
+					
+					<p>
+						En mathématiques et plus particulièrement en géométrie algorithmique, la triangulation de Delaunay d'un ensemble P de points du plan est une triangulation DT(P) telle qu'aucun point de P n'est à l'intérieur du cercle circonscrit d'un des triangles de DT(P). Les triangulations de Delaunay maximisent le plus petit angle de l'ensemble des angles des triangles, évitant ainsi les triangles « allongés ».
+
+La création du diagramme se fera à partir de la bibliothèque <a href="https://github.com/nodename/as3delaunay" >AS3Delaunay</a>.
+					</p>
+					
+					
+					<hr><br>
+					
+					<p>
+						Premièrement, il faut importer les fichiers actionscript 3 de la librairie, puis déclarer les variables nécessaires à la création de la triangulation.
+Il faut créer:
+					</p>
+					
+					<p>
+						Une variable « _points » de type « vector » pour enregistrer les points devant à faire le diagramme.<br>
+Une variable « _plotBounds » de type rectangle pour délimiter les limites du diagramme.<br>
+Une variable« _voronoi » de type « voronoi » qui contiendra le diagramme complet.<br>
+Une variable« _segment » de type « vector » qui contiendra les sègements relient les points.<br>
+					</p>
+					
+					<code class="codeblock" lang="actionScript" legende="Etape 1">package delaunaydemo {
+    import com.nodename.Delaunay.Voronoi;
+    import com.nodename.geom.LineSegment;
+ 
+    import flash.display.Sprite;
+    import flash.events.Event;
+    import flash.geom.Point;
+    import flash.geom.Rectangle;
+ 
+    public class Example extends Sprite {
+        private var _points:Vector.<Point>;
+        private var _plotBounds:Rectangle;
+        private var _voronoi:Voronoi;
+        private var _segments:Vector.<LineSegment>; </code>
+					<br>
+					<p>
+						Créer une fonction d’initialisation qui est lue après l’ajout de la scène dans la liste d’affichage. Dans cette fonction, une boucle crée le nombre de point désiré et les positionne aléatoirement sur la scène et les insère dans le tableau _points.
+
+					</p>
+					
+					<code class="codeblock" lang="actionScript" legende="Etape 2">package delaunaydemo {
+    public function Example() {
+            if (stage) init();
+            else addEventListener(Event.ADDED_TO_STAGE, init);
+        }
+ 
+     private function init(event:Event = null):void {
+            _points = new Vector.<Point>();
+ 
+            for (var i:uint = 0; i < 50; i++) {
+                var point:Point = new Point(Math.random() * stage.stageWidth, Math.random() * stage.stageHeight);
+                _points.push(point);
+            }	</code>
+					
+					<br>
+					<p>
+						Initialiser les objets en lien avec leurs variables respectives, puis, dans une boucle « for each » dessiner les segments à partir des cordonnées calculées par la librairie.
+					</p>
+					
+					<code class="codeblock" lang="actionScript" legende="Etape 3">
+	   _plotBounds = new Rectangle(0, 0, stage.stageWidth, stage.stageHeight);
+           _voronoi = new Voronoi(_points, null, _plotBounds);
+ 
+           _segments = _voronoi.delaunayTriangulation();
+ 
+            for each (var segment:LineSegment in _segments) {
+                graphics.lineStyle(2, 0x000000, 1);
+                graphics.moveTo(segment.p0.x, segment.p0.y);
+                graphics.lineTo(segment.p1.x, segment.p1.y);
+            }
+        }
+    }
+}					</code>
+					
+					<img src="img/triangulationDelaunay_tutoriel.png" alt="triangulationDelaunay_tutoriel" >
+					<br>
+					<p>
+						La création du diagramme est complétée.
+Une multitude de possibilités d’interaction s’offre à vous.
+En voici un exemple.
+
+					</p>
+					
+					<code class="codeblock" lang="actionScript" legende="Etape 4">
+function onUpdate(e:Event){
+			
+	for(var i =0; i < pointNumber; i++) {
+		_points[i].x = ((_conteneur_pointCibles.getChildAt(i)) as PointCible)._unPointCible.x;
+		_points[i].y = ((_conteneur_pointCibles.getChildAt(i)) as PointCible)._unPointCible.y;	
+	}
+				
+	graphics.clear();
+	_segments = _voronoi.delaunayTriangulation();
+	
+	for each (var segment:LineSegment in _segments) {
+					
+	    graphics.lineStyle(2, 0xFFFFFF, 1);
+	    graphics.moveTo(segment.p0.x, segment.p0.y);
+	    graphics.lineTo(segment.p1.x, segment.p1.y);
+	    }
+}</code>
+
+					<p>
+						Dans cet exemple, la boucle créant  des segments et l’appel de la fonction créant le diagramme est déplacé dans une fonction appelée à chaque images d’une seconde.
+La commande « graphics.clear » est appelée pour pouvoir redessiner le diagramme à chaque fois que la fonction est appelée.
+Donc, pour animer le diagramme, il suffit de déplacer la position des points à l’intérieur du vecteur « _points », et à chaque images, la triangulation sera recalculée selon la nouvelle position des points.
+					</p>
+					
+					<img src="img/triangulation_resultat.png" alt="triangulation_resultat" >
+
+				</div>
+				<footer class="grey-block block">
+					<div id="copyright">
+						<h3>Copyrights</h3>
+						<p>Giacomo Ferron</p>
+					</div>
+					<nav>
+						<a href="https://www.facebook.com/installationFOTOS?fref=ts"><span class="fa fa-facebook"></span></a>
+						<a href="http://dectim.ca/"><img src="img/design/logo-dectim.png"></a>
+					</nav>
+				</footer>
+			</section>
+		</div>
+	</body>
+</html>
