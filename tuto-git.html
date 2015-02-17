@@ -39,20 +39,30 @@
 						<h2>Date 16/02.15</h2>
 					</header>
 					<!-- Contenue -->
-					<p>Le but de ce tutoriel est de comprendre et utiliser git, un système de versionage très pratique. Git permet à plusieurs développeurs de travailler sur le même code en même temps, de garder un historique des modifications et de centraliser le projet sur un serveur distant, doublant ainsi comme un backup. Il est totalement possible d'utiliser git pour versionner un projet seulement en local, mais il est généralement utilisé avec un service tel que Github ou Bitbucket. Pour la suite de ce tutoriel, lorsque je mentionne le serveur ou dépôt, je me réfère à ce service.</p>
+					<p>Le but de ce tutoriel est de comprendre et utiliser git, un système de versionage très pratique. Git permet à plusieurs développeurs de travailler sur le même code en même temps, de garder un historique des modifications et de centraliser le projet sur un serveur distant, doublant ainsi comme un backup. Il est totalement possible d'utiliser git pour versionner un projet seulement en local, mais il est généralement utilisé avec un service tel que Github ou Bitbucket. Pour la suite de ce tutoriel, lorsque je mentionne le serveur, je me réfère à ce service.</p>
+
+					<p>Il existe des dizaines d'interface graphique pour git. Ils ont tous leurs avantage, leurs inconvénients, leur plateforme, popularité, etc. Donc au lieu d'expliquer commet se servir de chaque interface graphique individuellement, ce tutoriel se concentrera sur les commandes console. Il est toujours possible d'accéder à la console à partir de l'interface graphique et les noms de commande ne change pas. Pour faire un <code>push</code>, par exemple, simplement cliquer sur le bouton <code>push</code></p>
+
+					<p>Dans les exemples ci-dessous, je vais parfois faire référence à <code>origin</code>. <code>origin</code> désigne le serveur et il est configuré à l'aide de la commande suivante.</p>
+
+					<code class="codeblock" lang="Console" legende="Configurer git"> git remote add <code>origin</code> https://lien_vers_le_depot.git
+</code>
+
+					<p>L'équivalent dans l'interface graphique est peut être trouvé dans les options du dépot, mais il est généralement configuré à la création.</p>
+
+					<h1>Le workflow d'un projet git</h1>
 
 					<p>Il y a 4 étapes à suivre lorsque l'on se sert de git. La première étape est de faire un pull, ou récupérer les modifications effectué par les autres développeurs sur le serveur. Pour faire un pull, on a besoin de fournir l'url du dépôt git, le nom d'utilisateur du service ainsi que le mot de passe qui lui ai associé.</p>
-					<code class="codeblock" lang="Console" legende="Exemple d'un pull">git pull origin master</code>
+					<code class="codeblock" lang="Console" legende="Exemple d'un pull">git pull <code>origin</code> master</code>
 
 					<p>La deuxième étape est de d'écrire le code, le tester, etc. comme on fait lorsqu'on développe normalement.</p>
 
-					<p>La troisième étape est de faire un <em>commit</em>. Un <em>commit</em> est fait dans une étape du développement où un morceau important est terminé et que le code est stable, c'est à dire raisonnablement sans bug. Il est très important de ne pas faire de <em>commit</em> sur un code instable. Un <em>commit</em> est accompagné d'un message qui décris les modifications effectué au code.</p>
+					<p>La troisième étape est de faire un <code>commit</code>. Un <code>commit</code> est fait dans une étape du développement où un morceau important est terminé et que le code est stable, c'est à dire raisonnablement sans bug. Il est très important de ne pas faire de <code>commit</code> sur un code instable. Un <code>commit</code> est accompagné d'un message qui décris les modifications effectué au code. La commande <code>add</code> permet de sélectionner quel fichiers sont ajouté dans le commit. Dans une interface graphique, c'est souvent un case à cocher.</p>
 					<code class="codeblock" lang="Console" legende="Exemple d'un commit">git add .
 git commit -m "Message du commit"</code>
 
-
-					<p>La dernière étape est de faire un <em>push</em>. Un <em>push</em> est lorsqu'on envoie tous ses <em>commits</em> au serveur. Il n'est pas nécessaire de faire un <em>push</em> après chaque <em>commit</em>.</p>
-					<code class="codeblock" lang="Console" legende="Exemple d'un push">git push origin master</code>
+					<p>La dernière étape est de faire un <code>push</code>. Un <code>push</code> est lorsqu'on envoie tous ses <code>commit</code>s au serveur. Il n'est pas nécessaire de faire un <code>push</code> après chaque <code>commit</code>.</p>
+					<code class="codeblock" lang="Console" legende="Exemple d'un <code>push</code>">git <code>push</code> <code>origin</code> master</code>
 
 
 
