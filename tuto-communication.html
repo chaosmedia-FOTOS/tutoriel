@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>FOTOS - Tutoriaux - Accueil</title>
+		<title>FOTOS - Tutoriel - Serveurs et communication</title>
 		<meta charset="utf-8">
 		<!-- Font-Awesome -->
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="font/css/font-awesome.min.css">
 		<!-- Font -->
 		<link rel="stylesheet" type="text/css" href="font/essence_light.css">
 		<link rel="stylesheet" type="text/css" href="font/essence_sans.css">
@@ -22,7 +22,7 @@
 					<img src="img/design/logo-fotos.png" alt="Logo fotos">
 				</div>
 				<div class="main-block">
-					<h1 class="block">Tutoriel / Programmation LED</h1>
+					<h1 class="block">Tutoriel / Serveurs et communication</h1>
 					<div class="grey-block block">
 						<h2 class="no-margin">Par Massaki Archambault</h2>
 						<nav id="contact">
@@ -36,39 +36,150 @@
 				<div id="content" class="block">
 					<header>
 						<h2>Catégorie Programmation</h2>
-						<h2>Date 13/02.15</h2>
+						<h2>Date 17/02.15</h2>
 					</header>
 
 					<!-- Contenue -->
-					<div class="video-container">
-						<video>
-						    <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-						    <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
-						    Votre navigateur ne supporte pas les vidéos HTML5.
-						</video>
-						<div class="play-button-container"><div class="fa fa-play"></div></div>
-					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum est in gravida maximus. Quisque luctus nibh et pretium interdum. Maecenas lacinia commodo urna at porta. Etiam condimentum rutrum varius. Vestibulum consequat lobortis maximus. Fusce a egestas enim, aliquam aliquam nulla. Suspendisse euismod mauris vel tellus tincidunt fermentum. Nunc ac ullamcorper dui, nec porttitor lectus. Sed ac ipsum eu <code>bar()</code> varius convallis. Donec risus dui, interdum id porta vel, imperdiet at nunc. Nam egestas elit ante, feugiat aliquet tortor dignissim quis. Cras hendrerit tortor luctus, imperdiet odio a, pulvinar arcu. Fusce eu ipsum eget massa venenatis placerat nec sit amet lorem.</p>
-					<code class="codeblock" lang="Python" legende="Exemple de code">#Some Code
-if(foo == True) :
-	bar()</code>
-					<p>Sed nec lacus ut odio ultricies aliquet. Phasellus sodales sollicitudin metus euismod ullamcorper. Integer turpis nibh, semper nec turpis aliquam, dapibus sollicitudin est. Morbi rhoncus elementum eleifend. Nulla consequat nisi non efficitur venenatis. Cras efficitur risus eros, et sollicitudin ligula ullamcorper nec. Nunc et dolor at augue gravida gravida nec facilisis mi. Aenean id lacus ultricies, accumsan dui vitae, finibus sem. Nulla lacus lorem, auctor vel sodales at, efficitur eget odio. Sed interdum, ex sit amet tempus porttitor, eros arcu vestibulum eros, sed ullamcorper diam justo id est. Nulla facilisis elementum tellus, eu dapibus lorem tristique id. Nullam ante massa, vehicula sollicitudin blandit vel, tincidunt sed risus. Morbi non sagittis arcu, ut pulvinar nibh. Duis consequat pretium ultrices. Morbi congue mauris non lacus sagittis, et ornare urna efficitur.</p>
+					<p>Le but de ce tutoriel est de faire communiquer un programme écris en ActionScript à un autre programme écris en Python par le réseau local. Nous allons créer un serveur python à l’aide du module SocketServer et un client en ActionScript avec la classe Socket. Les deux programmes se communiquerons à l’aide de chaînes de caractères.</p>
 
-					<p>Donec vitae eros eleifend, hendrerit mi vel, gravida ante. Phasellus dictum fringilla metus, vitae feugiat libero. Vestibulum pretium imperdiet lorem a mattis. Maecenas ut dolor et metus sagittis lobortis nec in purus. Fusce mattis ex in venenatis accumsan. Proin efficitur mollis bibendum. Suspendisse iaculis mauris pellentesque lacus venenatis <a href="#">ultricies</a>. Cras interdum erat ut viverra tempor. Donec mollis pulvinar est quis fringilla. Cras bibendum mi sit amet scelerisque molestie. Pellentesque non nibh sed dui dignissim malesuada vitae ac ex. Aliquam eu tempus turpis.</p>
-					
-					<img src="img/raspberry_pi_logo.jpg" alt="Logo du Raspberry PI">
+					<p>La version de Python utilisé sera Python 3, mais le code devrais fonctionner correctement sur Python 2 sans aucune modification. Le code ActionScript sera compilé en AIR 14.0. Le protocole utilisé sera le TCP.</p>
 
-					<p>Sed leo arcu, aliquet vitae turpis eu, sagittis maximus nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam sit amet nibh in nisl aliquam gravida sed quis arcu. Donec elementum, libero non venenatis efficitur, velit lectus elementum purus, id facilisis magna massa rutrum nisi. Ut turpis velit, convallis vulputate nisi non, ultricies tincidunt dolor. Quisque eget suscipit nibh, sit amet laoreet leo. Nulla maximus turpis in neque congue, a sollicitudin risus imperdiet. Nunc consectetur mauris sed nulla suscipit venenatis sit amet et ligula.</p>
-					
-					<img src="img/bbb_pinouts.jpg" alt="Pins du Beaglebone black">
+					<h1>Les sockets</h1>
 
-					<p>Etiam at euismod augue. Fusce nec lacus tellus. Duis tempus hendrerit tincidunt. Sed eu purus vel dui molestie cursus. Donec sed tellus ligula. Proin ipsum leo, feugiat a accumsan eu, iaculis vitae tortor. Morbi vulputate, tortor pharetra euismod tempus, tortor eros lacinia lectus, nec dignissim sapien quam in metus. Sed pharetra consectetur felis, quis ornare augue semper nec. Nam in tellus gravida, suscipit nulla sed, placerat massa. Ut molestie tortor et orci consequat, sed facilisis augue mattis. Curabitur bibendum orci eu augue tempus, id imperdiet sem imperdiet. Aenean vitae commodo velit.</p>
+					<p>Lorsque deux ordinateurs se communiquent par le réseau, ils se servent des sockets. Les sockets sont une interface IO comme un fichier où on peut y écrire des donnés ou les lires.</p>
+
+					<p>Pour faire communiquer 2 ordinateurs en utilisant le modèle client/serveur, le client doit d’abord créer un socket qui se connecte à l’adresse ip du serveur et au port que le serveur écoute. Une fois la communication établie, le client et le serveur peut écrire des donnés dans le <em>buffer</em> du socket et <em>flusher</em> le <em>buffer</em> pour le vider et les envoyer. Le destinataire peut alors lire les donnés de son propre <em>buffer</em> et l’interpréter et faire ce qui veux de ces donnés.</p>
+
+					<p>Le protocole TCP ne garantie pas que tous le buffer sera envoyé immédiatement lorsqu'on le <em>flush</em>, ou que les donnés n'arriveront pas à sa destination dans le désordre ou combiné. C'est pour cette raison que si on envoie beaucoup de donnés en succession, il faut séparer les chaînes avec un caractère séparateur et leur assigner un timestamp si l'ordre est important, et de faire un <code>split</code> pour séparer la longue chaine de caractère en plus petite qu'il étaient originalement lorqu'ils ont été envoyé. Par ailleur, flash ajoute un caractère null (<code>\0xx</code>) à la fin de la chaîne. Il est recommendé de faire un <code>strip()</code> sur la chaîne pour éviter tout effet indésirable.</p>
+
+					<h1>Le serveur</h1>
+
+					<p>Le module à utiliser lorsque l'on créer un serveur en Python est <code>SocketServer</code>. Pour créer un serveur TCP, il suffit d'instancier un objet <code>TCPServer</code> et d'appeller la méthode <code>serve_forever()</code>. Le serveur restera ouvert jusqu'à ce qu'on le ferme manuellement avec la méthode <code>shutdown()</code> ou que le programme se ferme. Le constructeur de <code>TCPServer</code> prend en paramètre le domaine (sur quel carte réseau le serveur écoute; <code>''</code> laisse Python choisir), le port et la classe qui définie les actions que le serveur effectue lorsqu'il reçois des donnés.</p>
+
+					<code class="codeblock" lang="Python" legende="Exemple d'un serveur">#!/usr/bin/env python
+import SocketServer
+import logging
+
+#Log setting
+logging.basicConfig(format='%(asctime)s %(levelname)s: %(message)s', level=logging.INFO)
+
+#Global
+HOST = ''
+PORT = 8888
+
+try:
+	server = SocketServer.TCPServer((HOST, PORT), SocketServer.BaseRequestHandler)
+	logging.info('Server starting')
+	server.serve_forever()
+
+finally:
+	logging.info('Server stopping')
+	server.shutdown()
+	logging.info('Server stopped')</code>
+
+					<p>Le code ci-dessus fonctionne. Un client peut se connecter, mais il est promptement déconnecté. La raison est que nous avons définie que la classe qui détermine les actions à faire lorsqu'un client se connecte est <code>BaseRequestHandler</code>, qui par défaut fait... rien! C'est pourquoi il faut hériter de cette classe et écraser ses fonctions <code>handle()</code>, <code>setup()</code> et <code>finish()</code>, pour effectuer des actions et rendre le serveur utile.</p>
+
+					<code class="codeblock" lang="Python" legende="Implémentation d'un serveur">class FlashServer(SocketServer.BaseRequestHandler):
+
+	def handle(self):
+		#Code des actions à faire durant la connection
+		pass
+	def setup(self):
+		#Code des actions à faire au début la connection
+		pass
+	def finish(self):
+		#Code des actions à faire à la fin de la connection
+		pass
+#
+# [...]
+#
+
+#Lorsque l'on créer le serveur, on utilise notre propre classe au lieu de BaseRequestHandler
+server = SocketServer.TCPServer((HOST, PORT), FlashServer)</code>
+
+					<p>Il est important de noter que dès que la méthode handle se termine, la connection avec le client est fermé. C'est pour cette raison qu'il y a généralement une boucle à l'intérieur pour garder la connection active.</p>
+
+					<p>Pour lire le socket, on se sert de la méthode <code>recv()</code> de la propriété <code>request</code>. avec en paramètre la taille du <em>buffer</em> en octets. Cette méthode bloque l'exécution du programme jusqu'à ce qu'il reçois des donnés. Similairement, pour envoyer des donnés, on se sert de <code>sendall()</code>. de l'objet <code>request</code>. <code>sendAll()</code> <em>flush</em> automatiquement le <em>buffer</em>, donc il n'est pas nécessaire de le faire manuellement. Ci-dessous, un serveur d'exemple qui attend que le client lui envoie une chaîne de caractère et lui répond en retournant la même chaîne de caractère en majuscule.</p>
+
+					<code class="codeblock" lang="Python" legende="Exemple d'un serveur qui répond au client">#!/usr/bin/env python
+import SocketServer
+
+class FlashServer(SocketServer.BaseRequestHandler):
+
+	def handle(self):
+		#On attend que le client nous envoie des donnés
+		self.data = self.request.recv(1024).strip()
+
+		#On envoie la même chaine au client, en majuscule
+		self.request.sendall(self.data.upper())
+
+server = SocketServer.TCPServer(('', 8888), FlashServer)
+server.serve_forever()</code>
+
+					<h1>Le client</h1>
+
+					<p>La classe utilisé pour créer un client en ActionScript est <code>Socket</code>, qui est dans le package <code>flash.net.Socket</code> et elle est très simple à utiliser. Une fois initialisé, on peut se connecter via la méthode <code>connect()</code>, qui prend le serveur et le port en paramètre. Une fois que la connection est réussi, l'objet <code>Socket</code> émet un évènement <code>Event.CONNECT</code>. Inversement, lorsqu'il se déconnecte, il émet un évènement <code>Event.CLOSE</code>. Lorsque le socket reçois des donnés, l'évènement <code>ProgressEvent.SOCKET_DATA</code> est émit.</p>
+
+					<p>Pour écrire des données dans le buffer, on se sert de la méthode <code>writeUTFBytes()</code> qui prend un <code>String</code> en paramètre. Dépendament du système d'exploitation, le buffer est <em>flushé</em> automatiquement ou pas. Il est donc important d'appeller manuellement la méthode <code>flush()</code> pour s'assurer que les donnés sont envoyé. Pour lire les donnés, la méthode <code>readUTFBytes()</code> est utilsé, avec la taille du <em>buffer</em> en paramètre.</p>
+
+					<code class="codeblock" lang="ActionScript" legende="Simple client ActionScript">package {
+	
+import flash.display.Sprite;
+import flash.events.Event;
+import flash.events.ProgressEvent;
+import flash.net.Socket;
+
+	public class Main extends Sprite{
+
+		private var _socket:Socket;
+
+		public function Main():void {
+			_socket = new Socket;
+
+			_socket.addEventListener(Event.CLOSE, onClose);
+			_socket.addEventListener(Event.CONNECT, onConnect);
+			_socket.addEventListener(ProgressEvent.SOCKET_DATA, onReceive);
+
+			_socket.connect("localhost", 8888);
+			_socket.flush();
+		}
+
+		private function onClose(e:Event):void {
+			trace("Déconnecté du serveur");
+		}
+
+
+		private function onConnect(e:Event):void {
+			trace("Connecté au serveur");
+
+			var chaine = "Hello world";
+			trace("Envoyé: " + chaine);
+			_socket.writeUTFBytes(chaine);
+		}
+
+
+		private function onReceive(e:ProgressEvent):void {
+			trace("Reçus: " + _socket.readUTFBytes(_socket.bytesAvailable));
+		}
+
+	}
+}</code>
+				<p>Voici ce qui devrait s'afficher dans la console de ce client si utilisé en conjonction avec le serveur Python donné plus tôt.</p>
+				<code class="codeblock" lang="Console" legende="Sortie de la console ActionScript">Connecté au serveur
+Envoyé: Hello world
+Reçus: HELLO WORLD
+Déconnecté du serveur</code>
+				
+				<h1>Ressources</h1>
+
+				<p><a href="https://docs.python.org/2/library/socketserver.html">Documentation Python pour SocketServer</a></p>
+				<p><a href="http://help.adobe.com/fr_FR/FlashPlatform/reference/actionscript/3/flash/net/Socket.html">Documentation ActionScript pour Socket</a></p>
 
 				</div>
 				<footer class="grey-block block">
 					<div id="copyright">
 						<h3>Copyrights</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vestibulum est in gravida maximus.</p>
+						<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Cette œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a>.
 					</div>
 					<nav>
 						<a href="https://www.facebook.com/installationFOTOS?fref=ts"><span class="fa fa-facebook"></span></a>
