@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FOTOS - Tutoriaux - Accueil</title>
+<meta charset="utf-8">
+<!-- Font-Awesome -->
+<link rel="stylesheet" href="font/css/font-awesome.min.css">
+<!-- Font -->
+<link rel="stylesheet" type="text/css" href="font/essence_light.css">
+<link rel="stylesheet" type="text/css" href="font/essence_sans.css">
+<!-- Style -->
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- Script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js" type="text/javascript"></script>
+<script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrapper">
+  <header>
+    <div id="main-header"> <a href="index.html" id="btnRetour">Retour</a> <img src="img/design/logo-fotos.png" alt="Logo fotos"> </div>
+    <div class="main-block">
+      <h1 class="block">Tutoriel / FABRICATION D’UN CLAVIER INTERACTIF</h1>
+      <div class="grey-block block">
+        <h2 class="no-margin">Par Félix Leblanc</h2>
+        <nav id="contact"> <a href="http://felixleblanc.ca">Portfolio</a> <a href="http://ca.linkedin.com/pub/félix-leblanc/a2/5b3/a93/fr"><span class="fa fa-linkedin"></span></a> </nav>
+      </div>
+    </div>
+  </header>
+  <section class="main-block">
+    <div id="content" class="block">
+      <header>
+        <h2>Catégorie Composants interactifs physique / programmation</h2>
+        <h2>Date 16/02.15</h2>
+      </header>
+      
+      <!-- Contenue --> 
+      <!--<div class="video-container">
+						<video>
+						    <source src="http://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+						    <source src="http://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+						    Votre navigateur ne supporte pas les vidéos HTML5.
+						</video>
+						<div class="play-button-container"><div class="fa fa-play"></div></div>
+					</div>			
+                    
+                    	<code class="codeblock" lang="Python" legende="Exemple de code">#Some Code
+if(foo == True) :
+	bar()</code>-->
+      
+      <h1>Introduction</h1>
+      <p>Les claviers interactifs pour installations musicales disponibles sur internet sont bien souvent soit de piètre qualité, soit absolument hors de prix. La fabrication maison semble alors une réponse efficace, esthétique et peu coûteuse à la question. Cela dit, un autre problème y est sous-entendu, souvent bien trop ignoré : s’assurer de pouvoir, de façon dynamique (par exemple la journée même d’une présentation), associer les touches du clavier ainsi fabriqué à des fonctions distinctes. </p>
+      <p>Le présent tutoriel sera donc divisé en trois parties se suivant plus ou moins logiquement : dans un premier temps, nous modifierons un bouton acheté en magasin pour qu’il convienne à nos besoins. Par la suite, nous monterons un clavier en utilisant les boutons ainsi modifiés. Finalement, nous délaisserons le matériel physique pour s’attaquer, à l’aide du logiciel Flash d’Adobe, à l’épineuse question de l’association. </p>
+      <p>À la fin de ce tutoriel, vous aurez donc un clavier numérique de douze touches carrées en bois, qui, à l'aide du code développé, pourra être branché et rapidement fonctionnel et ce, n'importe où.</p>
+	  
+      <h1>Vous aurez besoin de...</h1>
+     
+      <li>Logiciel/langage de programmation utilisé : Adobe Flash / AS3</li>
+      <li>Librairie : Jmulator (réalisée par Jean-Philippe Côté), disponible <a href="http://cote.cc/projects/jmulator">ici</a></li>
+      <br>
+      
+      <h2>Matériel</h2>
+      
+      <li>12 boutons poussoirs momentanés (<a href='http://addison-electronique.com/bouton-a-poussoir-momentane-n-c.html'>ce modèle</a>)*</li>
+     
+      <li>Deux planches de bois pour la base de la console (8,5cm x 24,5cm)</li>
+      <li>Une planche de bois mince pour les boutons (d’une surface minimum de 12 cm x12 cm)
+      <li>8 vis</li>
+      <li>Du fil conducteur (env. 4m) *</li>
+      <li>Un phidget (avec minimalement autant d’inputs que vous avez de bouton) avec son câble USB *</li>
+      <p><em>* Vous pouvez vous procurer ces éléments chez <a href='http://addison-electronique.com/'>Addison</a> à un prix minimal. </em></p>
+      <br>
+      
+      <h2>Outils</h2>
+      <li> Scie</li>
+      <li>Peinture (couleur au choix, nous utiliserons ici le noir et le blanc)</li>
+      <li>Colle chaude</li>
+       <img src='img/boutons.jpg' class='petiteImage'> <img src='img/phidget.jpg' class='petiteImage'>
+      <h1>Le tutoriel</h1>
+      <h2>Partie 1 : Modifications esthétique d’un bouton</h2>
+      <p>1.1	Dans la planche de bois mince, couper 12 carrés de 3,5 cm par 3,5 cm.</p>
+      <p>1.2	Si désiré, peindre les touches de bois ainsi obtenues. Laisser sécher.</p>
+      <p>1.3	Coller les touches aux boutons. </p>
+ 
+      <h2>Partie 2 : Montage du clavier </h2>
+    <p>  2.1 Couper 24 sections de fil conducteur de 15 cm chaque. </p>
+<p>2.2 Fixer les fils aux boutons (voir image ci-dessous).</p>
+ <img src='img/bouton_fil.jpg' class='petiteImage'> 
+<p>2.3 À l’aide de la perceuse, percer 12 trous dans une des deux planches de la console conformément au plan suivant. Les trous sont de 1,5cm de diamètre, chacun étant séparé par 2,5cm. </p>
+<img src='img/Plan pour tuto_grand.jpg'>
+
+     <p> 2.4 Installer les deux planches une au-dessus de l’autre (celle avec trous en haut) en les séparant de quatre piliers aux coins d’environ 8cm de haut. Visser. </p>
+<p>2.5 Doucement insérer les boutons dans les trous correspondants. </p>
+<img src='img/Plan pour tuto_cote.jpg'>
+
+<p>2.6 Pour chaque fil, insérer une extrémité dans une ouverture du phidget et l’autre dans le ground (GND). </p>
+<p>2.7 Brancher le fil USB du phidget dans l’ordinateur. </p>
+
+
+      <h2>Partie 3 : Programmation d’une association dynamique</h2>
+      
+      <p>La logique du programme que nous créerons ici est plutôt simple. Dans un premier temps, une interface visuelle informe l'utilisateur du présent son à associer. C'est alors à l'utilisateur d'appuyer sur un input du clavier numérique. Le code associera ce son et le numéro de l'input. Le programme passe automatiquement au prochain son, ainsi de suite. Lorsque tous les sons ont été associé, le programme se ferme alors. Pour le bénéfice du test, notre présent code instanciera alors une fonction-exemple qui jouera les sons associés.</p>
+      <p>Notez-bien : le code que nous construirons se destine à une utilisation back-end. Il n'est donc pas à l'épreuve de l'utilisation inconsidérée d'un utilisateur inconscient.</p>
+        
+      <p>  3.1 Dans Flash, créer la classe de Document, que nous nommerons ici Application. S’assurer de bien la lier et de la sauvegarder au bon endroit. </p>
+<p>3.2 Créer une autre classe, nommée Btn_Fn. Elle aura pour rôle de stocker les informations propre à chaque bouton.</p>
+<p>3.3 Rapidement créer une interface suivant le modèle suivant. Respecter les noms des champs de texte. Dans le bibliothèque, clic droit > Propriétés… > cocher ‘’Exporter pour ActionScript’’. Lui donner le nom de classe FenetreAssociation. </p>
+
+<img src='img/interface.jpg'>
+<p>3.4 Instancier les variables suivantes :</p>
+        
+        <code class="codeblock" lang="AS3" legende="Variables à instancier">
+               // L'interface
+                public var maFenetreAssociation: FenetreAssociation; 
+		// Référence à la classe Btn_fn
+		public var btn: Btn_Fn; 
+		// Objet de la librairie Jmulator qui détectera les inputs 
+		public var emu: IpacVe = new IpacVe(stage); 
+		// Liste des fonctions/sons à assigner 
+		public var nbrFnAssigner: Array = [], 
+        	 // Tableau où se fera l'association input - fonction
+			tblBtnAssigner: Array=[],
+           	 // Tableau où les sons seront déposés
+			tblSons:Array=[] ;
+
+                public var numeroActuel: int = 1; // Servira de vérificateur pour une pseudo-boucle
+
+</code>
+<p>3.5 Créer une fonction nommée InstancierAssociation. En faire l’appel dans le constructeur. </p>
+<p>3.6 Cette fonction aura 3 principaux rôles : monter le tableau indiquant le nombre de fonctions à assigner, instancier l’interface et gérer la détection des touches. </p>
+         <code class="codeblock" lang="AS3" legende="InstancierAssociation">
+        public function instancierAssociation(): void {
+			
+			//1. Nombre de fonctions à assigner
+			for(var a:int=1; a<13; a++)
+			{
+				nbrFnAssigner[a]='Son'+a;	
+			}
+			
+			//2. Instancier la fenêtre d'association
+			maFenetreAssociation = new FenetreAssociation();
+
+			addChild(maFenetreAssociation);
+			maFenetreAssociation.x = stage.stageWidth / 2 - maFenetreAssociation.width / 2;
+			maFenetreAssociation.y = stage.stageHeight / 2 - maFenetreAssociation.height / 2;
+
+			maFenetreAssociation.nomFonction.text = nbrFnAssigner[numeroActuel];
+
+	
+			//3. Gestion des interactions
+			var emu: IpacVe = new IpacVe(stage, true, EmulatorTriggerMode.TRIGGER_ON); 
+                // Crée un nouvel objet IpacVe (phidget virtuel). stage le lie sur la scène, tandis que les deux autres paramètres s'assurent de ne l'activer que sur la pression et non lorsque relaché.
+			emu.addEventListener(IpacVeEvent.ANY_INPUT, assign); // Le addEventListener appellera la fonction assign() sur réception de n'importe quel input. 
+		}
+         </code>
+                                   
+<p>3.7 Dans la classe Btn_Fn, préparer le constructeur à recevoir deux paramètres, l’input et la fonction correspondante. Stocker ces deux paramètres dans des variables publiques nommées respectivement input et fonction.</p>
+<p>3.8 Créer la fonction assign() appelée par le addEventListener précédent. Cette fonction suit un ordre logique if > else if > else qui englobent à eux trois toutes les opérations.</p>
+<p>La logique : la fonction à assigner est affichée. Lorsqu’un utilisateur presse un input, celui-ci est associé à la fonction dans une classe de document qui sera stockée dans un tableau, puis la prochaine fonction est choisie.</p> 
+ <p>Lorsque son travail est accompli, elle transfère alors son addEventListener sur une autre fonction qui se chargera pendant l’utilisation future de faire le lien input-sons.</p>
+              <code class="codeblock" lang="AS3" legende="Assign">
+             public function assign(e: IpacVeEvent): void {
+			// Crée un nouveau bouton et lui associe un input et une fonction, puis l'insère dans un tableau
+			if (numeroActuel < nbrFnAssigner.length) {
+				btn = new Btn_Fn(e.input, nbrFnAssigner[numeroActuel]);
+				tblBtnAssigner[e.input]=btn;
+				
+				maFenetreAssociation.listeFonctions.appendText(nbrFnAssigner[numeroActuel] + ' associée avec ' + e.input + '\n');
+
+				numeroActuel++;
+				maFenetreAssociation.nomFonction.text = String(nbrFnAssigner[numeroActuel]);
+			} // Si toutes les fonctions sont associées, l'opération prend fin et le prochain input de l'utilisateur fermera la fenêtre. 	
+           		 else if (numeroActuel == 100) {	
+				trace('close');
+				e.currentTarget.addEventListener(IpacVeEvent.ANY_INPUT, lienFonctions);
+				removeChild(maFenetreAssociation);
+				e.currentTarget.removeEventListener(IpacVeEvent.ANY_INPUT, assign);
+				
+
+			} // Montre le message confirmant que toutes les fonctions ont été associées 
+           		 else {
+				maFenetreAssociation.nomFonction.text = 'Toutes les fonctions ont été assignées \n appuyez sur un bouton pour fermer';
+				numeroActuel = 100;
+			}
+		}
+                                                    
+                                                        </code><br>
+POUR TESTER
+<p>3.9 Trouver et sauvegarder dans un dossier ‘’sons’’ 12 sons nommés Son[1-12]. </p>
+<p>3.10 Créer une fonction de chargement de sons. Ne pas oublier de l'appeler dans le constructeur </p>
+                    <code class="codeblock" lang="AS3" legende="Chargement de sons">
+              	public function chargerSons():void{
+			
+			for(var i:int=1; i<9; i++)
+			{
+				var snd:Sound=new Sound();
+				var channel:SoundChannel = new SoundChannel();
+
+				var req:URLRequest= new URLRequest('sons/Son'+i+'.mp3');
+
+				snd.load(req);
+					
+				tblSons[i]=snd;
+				}
+			}
+                    </code>
+<p>3.11 Créer la fonction lienFonctions(e: IpacVeEvent). Lorsqu’elle reçoit un input, elle en identifie le code et cherche une fonction qui y correspondrait. </p>
+ <code class="codeblock" lang="AS3" legende="Lien Fonctions">
+     	public function lienFonctions(e: IpacVeEvent): void {
+		
+			var numSon:int;
+			
+			if(tblBtnAssigner[e.input].fonction.length==4)
+			numSon=parseInt(tblBtnAssigner[e.input].fonction.slice(3,4));
+			
+			else
+			numSon=parseInt(tblBtnAssigner[e.input].fonction.slice(3,5));	
+			
+			tblSons[numSon].play();
+			}
+                    </code>
+                    
+             <p>3.12 Exécuter le code.</p>
+
+      
+       <h1>Sur l'auteur</h1>
+      
+      <p>FÉLIX LEBLANC / Étudiant au cégep en Multimédia et bientôt à l’université en Science Politique, je suis un mordu de création et de sciences sociales. Depuis toujours déchiré entre un penchant créatif contrastant avec ma profonde passion pour la lecture, l’écriture et l’analyse politique, je tente de partager équitablement mon temps entre ces intérêts et le plein air.  </p>
+   
+    </div>
+    <footer class="grey-block block">
+      <div id="copyright">
+      <h3>Copyrights</h3>
+						<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Cette œuvre est mise à disposition selon les termes de la <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Licence Creative Commons Attribution 4.0 International</a>.
+      </div>
+      <nav> <a href="https://www.facebook.com/installationFOTOS?fref=ts"><span class="fa fa-facebook"></span></a> <a href="http://dectim.ca/"><img src="img/design/logo-dectim.png"></a> </nav>
+    </footer>
+  </section>
+</div>
+</body>
+</html>
